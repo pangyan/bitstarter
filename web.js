@@ -3,6 +3,11 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
+  fs.readFileiSync('index.html', function (err, data) {
+    if (err)
+      throw err;
+    console.log(data);
+  });
   response.send('Hello World 2!');
 });
 
